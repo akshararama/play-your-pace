@@ -1,0 +1,42 @@
+Project Description: 
+The project will track the pace of jogging for a person using computer vision ased on color tracking and play music that matches the tempo of their jogging. 
+
+Competitive Analysis:
+One project I have seen that does a similar thing is SpotifyRun. They take the tempo of
+your run based on smartphone accelerometers and plays a song that matches the tempo. This
+is different than what I am doing because I am changing the tempo of an already exisitng file and then returning it rather than playing a file as it is.
+
+Structural Plan: 
+Computer vision functions:
+    will track a colored object (hand holding something) and return a count of
+    of how often the hand moves based on the original position. 
+    keeps track of a list of locations where the ball has been and 
+
+Audio Functions: 
+    function that changes the speed of the audio file, function that changes the frequency of the audio file in order to keep the pitch the same. 
+
+    functions that write and playback the file
+    functions that play back the file
+
+Algorithmic Plan:
+    The part of the code that will be hardest is tracking the position of the hand.
+    Algorithmically I plan on keeping a list ofa certain number of all the points that the colored object passes thru and when the points change direction in terms of the 
+    horizontal plane.  I also plan to remove objects from the line when they hit a certain point. 
+
+Timeline Plan: 
+    I intend to complete the entirety of openCV part by Saturday this week. Since
+    the project needs to be at MVP by wednesday after completing the openCV I will work 
+    on modifying the music starting on thursday. The main things I need to get done before MVP next wednesday are threading the two parts of the project together and making sure it works with an actual person jogging. 
+
+
+Version Control Plan:
+    I will store the versions by emailing them to myself in a zip file. 
+
+Module List: 
+OpenCV and PyAudio
+
+TP2 Update: 
+Forgot to include an update for TP2, but I ended up needing more files and functions than I had planned for in the original design document.
+
+TP3 Update:
+ Algorithmically, the hardest parts were tracking objects and using time effectively to track pace of the object. A lot of the rest of the complexity comes from the threading of use of sound and changing the speed of music. My attempts at signal processing are included in the Term Project under timeshift.py and a bit in playaudio.py. I was not able to figure out how to modify the sound effectively in order to use in the project, it was too static-y and not appealing to listen to. So I decided to change speed and pitch proportionally (resulting in high pitches for high bpms). But I also decided to incorporate a way in which it can choose a song closest to your bpm out of 30 song choices.
